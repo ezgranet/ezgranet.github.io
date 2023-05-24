@@ -1,11 +1,251 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Single Member</title>
+  <style type="text/css">  p input {
+  display: none !important;
+}
+.sharing-button  {
+  margin: 2px !important;
+    }
+    body * {
+               background-color: #ececec;
+
+      font-family: palatine-parliamentary !important;
+    }
+
+  .limited * {
+    font-size: 75% !important;
+    }
+    @font-face {
+  font-family: 'palatine-parliamentary';
+      src: url('https://github.com/ezgranet/palatine-parliamentary/blob/main/Palatine-Bold.otf?raw=true')  format('truetype'); /* Safari, Android, iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+
+@font-face {
+  font-family: 'palatine-parliamentary';
+      src: url('https://github.com/ezgranet/palatine-parliamentary/blob/main/Palatine-BoldItalic.otf?raw=true')  format('truetype'); / /* Safari, Android, iOS */       
+  font-style:   italic;
+  font-weight:  700;
+
+}
+
+@font-face {
+  font-family: 'palatine-parliamentary';
+src: url('https://github.com/ezgranet/palatine-parliamentary/blob/main/PalatineParliamentary-Italic.otf?raw=true')  format('truetype'); /* Safari, Android, iOS */
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'palatine-parliamentary';
+       src: url('https://github.com/ezgranet/palatine-parliamentary/blob/main/Palatine-Regular.otf?raw=true;')  format('truetype'); /* Safari, Android, iOS */       
+  font-style:   normal;
+  font-weight:  400;
+}
+@font-face {
+    font-family: QTCaslanOpen;
+    src: 
+      url(https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/qtco/QTCaslanOpen.otf) format(opentype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fleuron
+{
+    margin-top: 30px;
+margin-bottom: 30px;
+}
+img.myimage {
+    width: 1em !important;
+  height: .25em !important;
+}
+
+
+/* Sup text */
+p input + label {
+  font: 0.7em / 1 cardo, serif;
+  font-feature-settings: "onum", "pnum";
+  vertical-align: super !important;
+  cursor: pointer !important;
+  transition: color 0.1s !important;
+}
+    h3, .entry-title  {  text-align: center !important;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+      font-size: 150% !important;
+}
+   
+ .post-header, post-header-container > container, post-header-line-1  {  text-align: center !important;
+      margin-top:30px !important;
+            margin-bottom:30px !important;
+
+        display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width:  50% !important;
+
+}
+    
+.pcenter {
+  text-align: center !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:  30%;
+}
+.catchwords {
+    text-align: center !important;
+
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:  50%;
+  
+}
+
+
+.icenter
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+p input + label:before {
+  content: "[";
+}
+
+p input + label:after {
+  content: "]";
+}
+
+p input + label:hover {
+  color: #838374;
+}
+
+/* Footnote text */
+.sans * {
+
+
+}
+p.copyright-center {
+
+   text-align: center;
+
+}
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+
+p input:checked + label + small {
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+    p+p.small {  font-family: alegreya-sans, sans-serif !important;
+    }
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+
+    small * {
+    font-family: alegreya-sans, sans-serif !important;
+}
+    p > small * {    font-family: alegreya-sans, sans-serif !important;
+}
+
+/******* Flavors *******/
+
+/* inline reveal */
+ input:checked + label + small {
+  margin: 0 0.15em;
+}
+
+
+
+
+p {
+  position: relative;
+}
+
+p + p {
+  margin-top: 4em;
+}
+
+input.chk-btn {
+  display: none;
+}
+input.chk-btn + label {
+  border: 1px solid grey;
+  background: ghoswhite;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+input.chk-btn:not(:checked) + label:hover {
+  box-shadow: 0px 1px 3px;
+}
+input.chk-btn + label:active,
+input.chk-btn:checked + label {
+  box-shadow: 0px 0px 3px inset;
+  background: #eee;
+}
+.cbutton {
+text-align: center;
+}
+.clink {
+    margin-top: 30px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+    small * {
+a:link {
+  color: #355496 !important;
+}
+  color: #545449 !important;
+font-family: alegreya-sans, sans-serif !important;
+}
+.qtco  {font-family: QTCaslanOpen !important;
+font-size: x-large;
+letter-spacing: 2px !important;}
+    p *  {max-width:80% !important; }
+
+    body * {max-width: 100% !important;
+   }
+    span.byline.post-labels  {display: none !important;}
+ div.post-footer-line.post-footer-line-2   {display: none !important;}
+    #sharing-button-Blog1-byline-7749537797363895262 {width: 400px !important;}
+div.post-header-container.container  {display: none !important;}
+ </style>
+  <style type="text/css"><!--End Twitter Card-->
+    <link href='https://use.typekit.net/wgd1jco.css' rel='stylesheet'/>
+
+<style></style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Single Member</title>
 </head>
 <body>
-<h2>Test</h2>
+
 </body>
 </html>
