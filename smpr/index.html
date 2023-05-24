@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link href='https://use.typekit.net/wgd1jco.css' rel='stylesheet'/>
+  <style type="text/css">p input {
+  display: none !important;
+}
+.sharing-button  {
+  margin: 2px !important;
+    }
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+
+  .limited * {
+    font-size: 75% !important;
+    }
+}
+@font-face {
+    font-family: QTCaslanOpen;
+    src: 
+      url(https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/qtco/QTCaslanOpen.otf) format(opentype);
+    font-weight: normal;
+    font-style: normal;
+}
+  .smallcaps { /* OK, a bit contrived... */
+   font-variant-numeric: inherit ;
+   font-feature-settings: &quot;c2sc&quot;, &quot;smcp&quot; !important;    
+  letter-spacing: 2px;}
+tr {  padding: 0 25px;
+}
+td {  padding: 0 25px;
+}
+th {  padding: 0 25px;
+}
+  code * {
+  font-family: "source-code-pro" monospace !important; 
+     font-variant-numeric: lining-nums tabular-nums !important;}
+
+  }
+
+.fleuron
+{
+    margin-top: 30px;
+margin-bottom: 30px;
+}
+img.myimage {
+    width: 1em !important;
+  height: .25em !important;
+}
+
+
+/* Sup text */
+p input + label {
+  font: 0.7em / 1 cardo, serif;
+  font-feature-settings: "onum", "pnum";
+  vertical-align: super !important;
+  cursor: pointer !important;
+  transition: color 0.1s !important;
+}
+    h3, .entry-title  {  text-align: center !important;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+      font-size: 150% !important;
+}
+   
+
+ .post-header, post-header-container > container, post-header-line-1  {  text-align: center !important;
+      margin-top:30px !important;
+            margin-bottom:30px !important;
+
+        display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width:  50% !important;
+
+}
+.backtoc  {
+  text-align: center !important;
+  display: block;
+  margin-top: -30px !important;
+    margin-left: auto !important;
+
+  margin-right: auto !important;
+  width:  30%;
+}
+
+    
+.pcenter  {
+  text-align: center !important;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width:  30%;
+}
+.catchwords {
+    text-align: center !important;
+
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:  50%;
+  
+}
+
+.dcenter
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icenter
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+p input + label:before {
+  content: "[";
+}
+
+p input + label:after {
+  content: "]";
+}
+
+p input + label:hover {
+  color: #838374;
+}
+
+/* Footnote text */
+.sans * {
+
+
+}
+p.copyright-center {
+
+   text-align: center;
+
+}
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+
+p input:checked + label + small {
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+    p+p.small {  font-family: alegreya-sans, sans-serif !important;
+    }
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+
+    small * {
+    font-family: alegreya-sans, sans-serif !important;
+}
+    p > small * {    font-family: alegreya-sans, sans-serif !important;
+}
+
+/******* Flavors *******/
+
+/* inline reveal */
+ input:checked + label + small {
+  margin: 0 0.15em;
+}
+
+.tcenter{margin-left: auto !important;
+margin-right: auto !important;
+
+}
+  ol {
+    margin-left: 50px !important;
+margin-right: 50px !important;
+
+   }
+
+     ul  {
+    margin-left: 25% !important;
+margin-right: 25% !important;
+        padding-left: -20px !important;
+
+
+   }
+
+
+p  {
+    text-align: justify !important;
+margin-top: 0 !important;
+margin-bottom: 0 !important;
+margin-left: 50px !important;
+margin-right: 50px !important;
+
+  position: relative;
+}
+
+p + p  {
+    text-indent: 1.25em !important;
+
+  margin-top: 0 !important;
+margin-bottom: 0 !important;
+  text-align: justify !important;
+}
+
+input.chk-btn {
+  display: none;
+}
+input.chk-btn + label {
+  border: 1px solid grey;
+  background: ghoswhite;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+input.chk-btn:not(:checked) + label:hover {
+  box-shadow: 0px 1px 3px;
+}
+input.chk-btn + label:active,
+input.chk-btn:checked + label {
+  box-shadow: 0px 0px 3px inset;
+  background: #eee;
+}
+.cbutton {
+text-align: center;
+}
+.clink {
+    margin-top: 30px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+    small * {
+a:link {
+  color: #355496 !important;
+}
+  color: #545449 !important;
+font-family: alegreya-sans, sans-serif !important;
+}
+.qtco  {font-family: QTCaslanOpen !important;
+font-size: x-large;
+letter-spacing: 2px !important;}
+    p *  {max-width:80% !important; }
+
+    body * {max-width: 100% !important;
+   }
+    span.byline.post-labels  {display: none !important;}
+ div.post-footer-line.post-footer-line-2   {display: none !important;}
+    #sharing-button-Blog1-byline-7749537797363895262 {width: 400px !important;}
+div.post-header-container.container  {display: none !important;}
+   </style>
+
+  <style type="text/css">
+strong.tt {
+	font-family: "source-code-pro", monospace !important;
+font-weight: 700 !important;
+	font-feature-settings: "tnum", "lnum" !important;
+
+
+}
+
+     .tt  { /* OK, a bit contrived... */
+font-family: "source-code-pro", monospace !important; 
+font-feature-settings: "tnum", "lnum" !important;
+  
+   }
+
+</style>
+      
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Single Member</title>
+</head>
+<body>
+	
+<h1>A Proposal for Single Member Proportional Representation</h2>
+
+</p></div>
+
+
+<div class="cbutton">
+<input type="checkbox"name="select-all" id="select-all" class='chk-btn' />
+<label for='select-all'>Expand/Hide All Footnotes</label>
+
+</div>
+
+
+
+ <div class="clink">
+<a href="https://cdn.jsdelivr.net/gh/ezgranet/smpr/smpr-white-paper.pdf/"><em>Download this white paper as a <span class="sc">PDF</span></em></a>
+</div>
+
+
+
+<div class="fleuron">
+
+<img src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/img/sep.png" alt="endpiece fleuron" width="300px" class="icenter">
+
+</div>
+
+
+
+
+
+
+
+<div id="TOC">
+<nav id="TOC" role="doc-toc">
+<ul >
+<li><a href="#acknowledgments" id="toc-acknowledgments">Acknowledgments
+</a></li>
+<li><a href="#prior-assumptions" id="toc-prior-assumptions">Prior
+Assumptions </a></li>
+<li><a href="#the-system-in-outline" id="toc-the-system-in-outline">The
+system in outline </a>
+<ul>
+<li><a href="#constituencies" id="toc-constituencies">Constituencies
+</a></li>
+<li><a href="#the-plurality-seats" id="toc-the-plurality-seats">The
+Plurality Seats </a></li>
+<li><a href="#the-proportional-seats"
+id="toc-the-proportional-seats">The Proportional Seats </a></li>
+</ul></li>
+<li><a href="#advantages" id="toc-advantages">Advantages </a></li>
+<li><a href="#potential-problems" id="toc-potential-problems">Potential
+problems </a></li>
+<li><a href="#sample-ballot" id="toc-sample-ballot">Sample Ballot </a>
+
+
+
+<ul>
+<li><a href="#explanatory-notes-on-the-sample-ballot"
+id="toc-explanatory-notes-on-the-sample-ballot">Explanatory Notes on the
+Sample Ballot </a></li>
+</ul></li>
+<li><a href="#sample-election" id="toc-sample-election">Sample Election
+</a>
+<ul>
+<li><a href="#a-vociferous-health-warning"
+id="toc-a-vociferous-health-warning">A vociferous health warning!
+</a></li>
+<li><a href="#distributing-plurality-seats"
+id="toc-distributing-plurality-seats">Distributing Plurality Seats
+</a></li>
+<li><a href="#the-proportional-seats-1"
+id="toc-the-proportional-seats-1">The Proportional Seats </a></li>
+<li><a href="#assessing-the-outcome"
+id="toc-assessing-the-outcome">Assessing the Outcome </a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 class="unnumbered" id="acknowledgments">Acknowledgments </h1>
+
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+<p class="first">This system is majorly indebted to the work of Sean Graham
+(University of Alberta), whose design of Dual Member Proportional
+Representation (DMP) provided an excellent system of proportional
+representation in the Canadian
+context.<input id="fn-2" type="checkbox"><label for="fn-2">2</label><small>&ensp;<span
+id="fn-2-content">Principally, the context that Canada is very very big,
+and almost entirely empty except where it’s not.</span></small> I have
+no doubt that his system is better suited than mine for the unique
+geographic and political context of Canada. I have attempted, as best I
+can, to design a system best fitted to the unique political and
+geographic context of the United Kingdom, and in doing so, have borrowed
+many of the brilliantly innovative elements of Graham’s DMP system.</p>
+<h1 id="prior-assumptions">Prior Assumptions </h1>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+<p>The question of the ‘best’ electoral system is meaningless; each
+electoral system prioritises different values and outcomes. Furthermore,
+because the system changes both voting and campaigning behaviour, it is
+impossible to compare systems in the abstract. The complex interplay of
+value-judgments and outcomes was neatly summed up by UCL’s esteemed Dr
+Alan Renwick, who has said ‘I’ve published several books on electoral
+systems and every time I research electoral systems more, I get even
+less clear on which electoral system I think is
+best.’<input id="fn-3" type="checkbox"><label for="fn-3">3</label><small>&ensp;<span
+id="fn-3-content">The remarks can be heard at <a
+href="https://youtu.be/-r2XlSTyxsQ?t=3763"
+class="uri">https://youtu.be/-r2XlSTyxsQ?t=3763</a>.</span></small>
+There can never be a universalist argument for a single, optimal system.
+Instead, the choice is about which electoral system best balances
+competing priorities in the specific national (or regional, etc)
+political and social context.</p>
+<p>The single-member majoritarian system—often referred to as
+first-past-the-post, or FPTP—used for Westminster elections in the UK
+is, by definition, not concerned with a proportional outcome, but
+instead with the outcome of 650 entirely separate contests. Many, myself
+included, believe that the electoral system ought to be reformed to
+include proportional or semi-proportional representation in some form.
+This view is, of course, of a very longstanding one, and many, many
+electoral systems have been proposed for adding a proportional element
+to Westminster elections. These systems, ranging from the many
+permutations of the single-transferrable vote (STV) to the Jenkins
+Commission’s alternative vote plus (AV+), have one thing in common: they
+were not implemented.</p>
+<p>Perhaps the most important lesson comes from the 2010 referendum on
+the introduction of the alternative vote (AV). AV is not a proportional
+system; the hope of the Liberal Democrats, who have long championed the
+introduction of STV, was that AV would be the first, easier step to
+introducing STV. The second, more difficult step would be increasing the
+district magnitude by merging constituencies. Yet, this first, facile
+step was too much change and uncertainty for the UK electorate, who
+resoundingly rejected the change. There were many reasons for the
+rejection, including the unpopularity of the spokespeople, status quo
+bias, and general lack of public interest, but, regardless, the result
+was a loud and intense rejection of a relatively minor change to the
+system.<span class="citation" data-cites="whiteley2011"></span></p>
+<p>My primary aim in constructing this system was to learn the lesson of
+this referendum—<em>viz</em>, that even seemingly minor changes (like
+introducing numbers to ballot papers) can render a voting system
+dead-on-arrival. Therefore, to maximise the chances of this system
+overcoming the considerable hurdles and opposition to reform (amongst
+both the electorate and institutional actors such as political parties)
+by, wherever possible, minimising all forms of change. The goal was to
+create a system which resembled FPTP to the greatest possible extent
+(and enjoyed its many advantages), while also introducing
+proportionality to the system. I sought to avoid change in every aspect
+of the system, from preserving parliamentary procedure (by ensuring that
+each member could be referred to by their constituency designation) to
+avoiding altering the ballot.</p>
+<p>The result was the system enumerated below, which can achieve a
+largely proportional outcome while retaining as a defining feature small
+single-member electoral districts. The primary focus of this project was
+to draft an electoral system minimising, wherever possible, change to
+the existing system. However, it is a happy coincidence that the outcome
+(I hope) resembles the so-called ‘sweet spot’ identified by Carey and
+Hix of low-magnitude proportional representation.<span class="citation"
+data-cites="careyhix2011"></span>. Nonetheless, there are manifestly
+much much better better designed systems; the goal of this project is
+not to design a better than those already created, not least because I
+would clearly fail miserably at trying to outdo the brilliant minds
+behind existing systems. Instead, it was to create a proportional system
+with the highest possible chance of one day being enacted in the UK
+(which is still very very low).</p>
+<h1 id="the-system-in-outline">The system in outline </h1>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+<h2 id="constituencies">Constituencies </h2>
+<ol>
+<li><p>All MPs are elected from Single Member Constituencies (SMCs). No
+constituency has more than one MP. Every part of the UK is
+simultaneously in two overlapping single member constituencies.</p></li>
+<li><p>These are divided into two sets: the plurality constituencies and
+the proportional constituencies.</p></li>
+<li><p>A proportional constituency’s is entirely coterminous with the
+territory of on average, 4 adjacent plurality constituencies. However,
+given the variance in constituency population size, some proportional
+constituencies will encompass more than 4 plurality constituencies and
+some will encompass less.</p></li>
+<li><p>In a general election, an elector casts their vote simultaneously
+for their plurality and their proportional MP, by checking a box
+adjacent to the names of the candidate(s) for both seats. An entirely
+independent candidate may only run for a plurality constituency seat,
+although a micro-party with two candidates can stand for both a
+proportional and plurality seat (even if it would stand little chance of
+receiving enough votes to earn a proportional seat).</p></li>
+</ol>
+<h2 id="the-plurality-seats">The Plurality Seats</h2>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+<ol>
+<li><p>In each plurality constituency, the candidate with the most votes
+is declared the duly-elected MP for that constituency.</p></li>
+<li><p>A party must win at least <strong>one</strong> plurality seat to
+be eligible for a proportional seat. Any party which fails to win a
+single plurality seat is thus excluded from Parliament (as is currently
+the case under FPTP); this functions as an electoral threshold.</p></li>
+</ol>
+<h2 id="the-proportional-seats">The Proportional Seats </h2>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+<ol>
+<li><p>The 130 proportional seats are then allocated on a national
+basis. The seats are awarded sequentially taking into account the seats
+already won (either plurality or proportional), by calculating over 130
+iterative rounds the St Laguë quota of <span
+class="math inline">$\frac{V}{2S+1}$</span>, where <span
+class="math inline"><em>V</em></span> is total votes for the party, and
+<span class="math inline"><em>S</em></span> is total seats. In each
+round,the party with the highest quota is awarded a proportional
+seat.</p></li>
+<li><p>When a party is awarded a proportional seat, the available (ie
+not yet elected) proportionality constituency candidate for that party
+with the most votes is elected as the MP for the constituency in which
+he or she stood.</p></li>
+<li><p>There are no overhang or compensatory seats. Once 130 seats have
+been allocated, the process is completed.</p></li>
+<li><p>There is no additional electoral deposit required for a
+proportional seat candidate provided the party has paid the deposit for
+at least one plurality seat candidate in a plurality seat located within
+the proportional seat.</p></li>
+<li><p>Provided a party puts forward <em>both</em> at least one
+plurality candidate and a proportionality candidate for any overlapping
+set of seats, its proportionality candidate will appear on the ballot of
+all voters within that prpoortional seat. This means that some (but not
+all) voters in a given proportional seat will see <em>just</em> a
+party’s proportional candidate on their ballot. They may elect to vote
+for that candidate, in which case their votes will count towards the
+party’s total and the candidate’s internal ranking. This allows smaller
+parties, who for logistical or financial reasons cannot stand the full
+complement of candidates, to still be eligible to receive
+proportionality seats.</p></li>
+<li><p>Any parties or independent candidates which do not stand against
+each other in any plurality or proportionality constituency may combine
+to form a single electoral unit for the purposes of calculating
+entitlements for proportionality seats. For example, the English &amp;
+Welsh Greens and the Scottish Greens, which are separate parties, could
+combine their vote totals so as to be counted as a single party when
+calculating proportional entitlements. Equally, pacts between
+independents and parties (such as that between Dominic Grieve and the
+Liberal Democrats in 2019) could lead to similar arrangements, with Mr
+Grieve’s votes counting towards the Liberal Democrat total. This will
+encourage co-operation without forcing the ideologically uncomfortable
+party mergers required by FPTP.</p></li>
+</ol>
+<h1 id="advantages">Advantages </h1>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+<ol>
+<li><p>Minimal change to existing system or ballot; eliminating concerns
+raised by AV referendum.</p></li>
+<li><p>Retains the central link between MP and constituents</p></li>
+<li><p>Promotes strong regional identities by empowering MPs to speak
+for a region at large.</p></li>
+<li><p>Transparency: no opaque party lists. Candidates are only elected
+MPs of places where they appeared on the ballot (and one presumes,
+campaigned).</p></li>
+<li><p>Direct link between votes for a proportionality candidate and
+their chances of being elected (because the vote puts them higher up the
+internal party list for the allocation of seats).</p></li>
+<li><p>Avoiding multi-member districts allows the tradition of referring
+to members by their constituency (‘the Hon Member for South
+Cambridgeshire’), and prevents the need for a change to parliamentary
+procedure.</p></li>
+<li><p>Avoids ‘two classes of MP’; all MPs have a specific constituency
+to whom they are responsible.</p></li>
+<li><p>Avoids extremist parties being represented by retaining the
+current, extremely powerful threshold of having to win a plurality SMC
+to gain representation in Parliament. There is absolutely no possiblity
+of the disgraceful result produced by the party list system in the 2004
+EU elections, which resulted in the
+BN<input id="fn-4" type="checkbox"><label for="fn-4">4</label><small>&ensp;<span
+id="fn-4-content">The ‘N’ technically does not, in the most pedantic
+sense, literally stand for ‘Nazi’, but it basically does</span></small>P
+being represented in the European Parliament.</p></li>
+<li><p>Using a national, as opposed to regional, proportional allocation
+of seats allows for the a high degree of proportionality with a
+relatively small ratio of plurality to proportionality MPs.</p></li>
+<li><p>The St Laguë quota ensures that small parties benefit.</p></li>
+<li><p>Yet always close link between proportional candidates and
+constituency</p></li>
+<li><p>Ends the effective disenfranchisement of people in the Speaker’s
+constituency.</p></li>
+<li><p>Avoids the inequality of advocates: everyone (with the minor
+exception of the Speaker’s constituency) has the same number of
+advocates in Parliament.</p></li>
+<li><p>Allows for more equal rates of representation while retaining
+geographically determined constituencies: the extremes of Na h-Eileanan
+an Iar and the Isle of Wight can be balanced out by varying the size of
+proportionality seats.</p></li>
+<li><p>Ends wasted votes by ensuring that even votes for hopeless
+candidates in safe seats can both boost the candidates’ party’s fortunes
+in the national proportional allocation and the chances of obtaining a
+proportional member from that list.</p></li>
+<li><p>Allows for productive co-operation between parties.</p></li>
+</ol>
+<h1 id="potential-problems">Potential problems </h1>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+<ol>
+<li><p>This does nothing to resolve the very silly situation of the
+Speaker’s constituents being disenfranchised, although it does at least
+ameliorate it by giving them an actively political MP (albeit one they
+had no say in choosing). It is clearly preferrable that the UK adopts
+the system used in Ireland, where the outgoing Ceann
+Comhairle<input id="fn-5" type="checkbox"><label for="fn-5">5</label><small>&ensp;<span
+id="fn-5-content">Think a speaker, but IRISH</span></small> is
+auotmatically returned to the
+Dáil<input id="fn-6" type="checkbox"><label for="fn-6">6</label><small>&ensp;<span
+id="fn-6-content">Think the first chamber of a legislature, but
+IRISH</span></small> as an additional TD.<input id="fn-7" type="checkbox"><label for="fn-7">7</label><small>&ensp;<span
+id="fn-7-content">Think an MP, but IRISH</span></small> My preferred
+solution would to be create a bespoke Parliamentary constituency
+encompassing only the House of Commons chamber, whose MP is the Speaker.
+However, it is already difficult
+enough<input id="fn-8" type="checkbox"><label for="fn-8">8</label><small>&ensp;<span
+id="fn-8-content">Read: virtually impossible</span></small> to change
+the electoral system; it seemed excessive to try to fix the speakership
+too in one go.</p></li>
+<li><p>Theoretically, if a party which only contests elections in one
+constituent part of the UK was virtually shut out of plurality seats, it
+could ‘run out’ of proportionality seat candidates. For example (and
+this is very much not the case at present), if the SNP were to get 30%
+of the vote in Scotland, but (due to intense competition from Labour,
+the Conservatives, and the Liberal Democrats) not win a single
+MP,<input id="fn-9" type="checkbox"><label for="fn-9">9</label><small>&ensp;<span
+id="fn-9-content">This, obviously, is the sort of electoral scenario
+that is theoretically imaginable, but incredibly, incredibly unlikely to
+ever happen in reality</span></small> it might be entitled to more
+proportionality seats than exist in Scotland. If, before an election,
+the SNP feared such an outcome, they might take the step of
+pre-emptively standing paper candidates in English plurality and
+proportionality seats in order to provide a buffer. This would be highly
+undesirable for two reasons: first, the SNP would strongly object to
+standing in England, and second, English voters might feel that their
+interests were not best represented by a proportionality MP from a party
+expressly uninterested in the governance of England. However, this sort
+of electoral scenario is extremely unlikely except as a thought
+experiment, because of the reality of Westminster elections. If it were
+to appear
+likely,<input id="fn-10" type="checkbox"><label for="fn-10">10</label><small>&ensp;<span
+id="fn-10-content">It almost certainly won’t</span></small> the obvious
+and amenable solution would be for Plaid Cymru and the SNP to stand as a
+single party for the purposes of proportionality seats (after all, the
+two do not stand candidates against each other and have a warm working
+relationship).</p></li>
+<li><p>Theoretically, it is possible with a candidate with relatively
+little initial support in a local area to be elected a representative.
+For example, the Greens may, in the majority of constituencies in which
+they stand (<em>pace</em> Brighton Pavilion), which may lead to a
+relatively high number of aggregated votes but relatively few highly
+placed candidates. The result is a proportionality candidate for the
+Greens may be high up the party list with ‘only’ 10,000
+votes.<input id="fn-11" type="checkbox"><label for="fn-11">11</label><small>&ensp;<span
+id="fn-11-content">This is a made-up number</span></small> This occurs
+in other systems, such as under STV (see eg Australian Senate
+elections), and, realistically, any proportional system results in
+people having at least <em>a</em> representative for whom not many of
+them voted.</p></li>
+</ol>
+<h1 id="sample-ballot">Sample Ballot </h1>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+<div class="center">
+<img  class="icenter" src="https://cdn.jsdelivr.net/gh/ezgranet/smpr/ballot.png" alt="   Election of the Members of Parliament for the overlapping constituencies of St Ives (Plurality) & Cornwall (Proportional)
+ Vote for only one set of candidate(s) by putting a cross ☒ in the box next to your choice
+Candidate for Cornwall G
+
+
+GLADSTONE, William
+10 Jenkins Quay, St Ives TR26 J06
+Liberal Democrats
+BONAR LAW, Andrew DISRAELI, Benjamin
+12 Thatcher Quay, St Ives TR26 MT3 12 Macmillan Drive, St Austell PL25 3TM The Conservative & Unionist Party Candidates
+Candidate for St Ives ASQUITH, Herbert
+   10 Ashdown Street, Truro TR1 5JA
+     THUNBERG, Siân
+17 Whittaker Road, Newquay TR7 7GT
+Green Party
+WILSON, Harold
+15 Gaitskell Close, St Ives TR26 9GH
+The Labour Party Candidates
+   HARDIE, Keir
+ 18 Bevan Way, Penzance TR17 3NY
+ MAVERICK, Jane
+16 Lonely Avenue, St Ives TR26 L11
+Independent
+PENTREATH, Dolly
+17 du Maurier Quay, St Ives TR26 7KW
+Mebyon Kernow—The Party for Cornwall
+  TREVITHICK, Piran
+  14 Trelawney Street, Falmouth TR10 9AG
+ 1
+
+
+
+" >
+
+</div>
+</div>
+<h2 id="explanatory-notes-on-the-sample-ballot">Explanatory Notes on the
+Sample Ballot </h2>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+
+<p>The Cornwall constituency is a paradigmatic example of how SMPR’s
+proportional seats can be foster regional identity. By giving often
+neglected regions, such as Cornwall, a distinct voice in Parliament, it
+can help remedy regional inequalities. Additionally, the local roots of
+SMPR enusre the system can connect with everyday voters. Most people in
+Britain have lives, and therefore have never heard of the St Laguë
+formula, but everyone can understand the concept of an MP for
+Cornwall.</p>
+<p>Three of the parties have stood candidates in both constituencies.
+The Green Party, however, has not stood a candidate in St Ives. This
+could be, for example, because of the difficulty in finding a good PPC,
+the lack of party organisation in the constituency, or the likelihood of
+losing the
+deposit.<input id="fn-12" type="checkbox"><label for="fn-12">12</label><small>&ensp;<span
+id="fn-12-content">Obviously these are generic fictional reasons which
+have nothing whatsoever to do with the actual St Ives Greens, who I am
+sure are lovely.</span></small>. However, because the Greens have stood
+at least one candidate in one of the other plurality constituencies in
+Cornwall, they are entitled to stand a candidate for the proportional
+seat. It then follows logically that this candidate will appear on the
+ballot of all voters in the constituency, regardless of which plurality
+seat they overlap with.</p>
+<p>There is also an independent candidate, who is standing only in St
+Ives. As in FPTP, independent candidates are welcome to stand in any
+plurality seat. While independent candidates cannot by themselves stand
+in both proportional and plurality seats, because <span
+class="math inline">1 &lt; 2</span>, groups of independents may band
+together to form new, small parties in their region or on the basis of a
+shared ideology.</p>
+<h1 id="sample-election">Sample Election </h1>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+
+<h2 id="a-vociferous-health-warning">A vociferous health warning! </h2>
+<p>The data used in the thought experiment below are largely based on
+the 2019 general election. However, this is emphatically
+<strong>not</strong> a counterfactual simulation, nor even a rough guess
+of what the results of the 2019 election would have been under SMPR. As
+noted before (but it bears strenuous repeating), the system is not a
+neutral variable that can be changed while leaving everything else the
+same. There is no <em>ceteris paribus</em> with electoral systems,
+because the system shapes the entire election. UK voters are incredibly
+accustomed to the FPTP system, and voting choices under the system are
+shaped by it.<span class="citation" data-cites="kiewet2013"></span>.
+That’s before even considering how alterations to electoral law and
+constituency boundaries might shape inter- or intra-party competition;
+furthermore, the changed electoral realities of a different system might
+have dissuaded various parties from even supporting an election in 2019
+in the first place.</p>
+<p>The maths below are just a way to see the output SMPR would produce
+on a relatively plausible input. They have no predictive value. They
+have no counterfactual value. Instead, their value is in demonstrating
+how the proportional features of SMPR intervene to alter parliamentary
+composition following (an entirely fictional, but not unrealistic)
+single-member constituency result. In that sense, this section is
+useful; it ought not to be mis-used.</p>
+<h2 id="distributing-plurality-seats">Distributing Plurality Seats </h2>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+
+<p>There are 520 plurality seats, which we can assume have been
+carefully and correctly apportioned by the four Boundary Commissions.
+Although it is unclear how voter behaviour might be altered by the
+knowledge that votes for poorly placed local candidates are no longer
+‘wasted’, let us
+imagine<input id="fn-13" type="checkbox"><label for="fn-13">13</label><small>&ensp;<span
+id="fn-13-content">Read: I cannot be bothered to make up new
+numbers</span></small> a world where the results broadly resemble
+2019’s. Using the 2019 election data,<span class="citation"
+data-cites="results2019"></span> and
+<span class="tt">mmp-calc</span><input id="fn-14" type="checkbox"><label for="fn-14">14</label><small>&ensp;<span
+id="fn-14-content"><a href="github.com/ezgranet/mmp-calc">Available at this link.</a></span></small>, I proportionally
+distributed (using the St Laguë quota) the seats won at the 2019
+election (650 plurality seats) into a 520 plurality seat Parliament,
+making for arbitrary reasons and without any evidence the wildly
+inaccurate assumption that the plurality seat distribution would be
+proportionally the same under
+SMPR.<input id="fn-15" type="checkbox"><label for="fn-15">15</label><small>&ensp;<span
+id="fn-15-content">I really want to emphasise that this assumption is
+just for illlustration, and absolutely <strong>not</strong> how a real
+election would have gone.</span></small>. For simplicity’s sake, I
+assigned the Speaker’s seat to Labour when tallying up the 650
+distributions, as it was a Labour safe
+seat.<input id="fn-16" type="checkbox"><label for="fn-16">16</label><small>&ensp;<span
+id="fn-16-content">Also this is already such an arbitrary exercise that
+one more arbitrary choice can’t hurt.</span></small>. The results are
+shown in Table 1.</p>
+
+<table style="width=100%" class="tcenter">
+<caption><strong>Distribution of Plurality Seats</strong></caption>
+<thead>
+  <tr class="header">
+<th style="text-align: left;"><strong></strong></th>
+<th style="text-align: right; width=40%"><strong><span class="tt">Current</span></strong></th>
+<th style="text-align: right;width=40%"><strong><span class="tt">SMPR</span></strong></th>
+</tr>
+
+<tr class="header">
+<th style="text-align: left;"><strong><span class="tt">Total</span></strong></th>
+<th style="text-align: right; width=40%"><strong><span class="tt">650</span></strong></th>
+<th style="text-align: right;width=40%"><strong><span class="tt">520</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">CON</span></td>
+<td style="text-align: right;"><span class="tt">365</span></td>
+<td style="text-align: right;"><span class="tt">292</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">LAB</span></td>
+<td style="text-align: right;">
+	<span class="tt">
+203
+</span>
+</td>
+<td style="text-align: right;">
+<span class="tt">
+162
+</span>
+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">SNP</span></td>
+<td style="text-align: right;"><span class="tt">48</span></td>
+<td style="text-align: right;"><span class="tt">38</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">LD</span></td>
+<td style="text-align: right;"><span class="tt">11</span></td>
+<td style="text-align: right;"><span class="tt">9</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">DUP</span></td>
+<td style="text-align: right;"><span class="tt">8</span></td>
+<td style="text-align: right;"><span class="tt">6</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">SF</span></td>
+<td style="text-align: right;"><span class="tt">7</span></td>
+<td style="text-align: right;"><span class="tt">6</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">PC</span></td>
+<td style="text-align: right;"><span class="tt">4</span></td>
+<td style="text-align: right;"><span class="tt">3</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">SDLP</span></td>
+<td style="text-align: right;"><span class="tt">2</span></td>
+<td style="text-align: right;"><span class="tt">2</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">GRN</span></td>
+<td style="text-align: right;"><span class="tt">1</span></td>
+<td style="text-align: right;"><span class="tt">1</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">APNI</span></td>
+<td style="text-align: right;"><span class="tt">1</span></td>
+<td style="text-align: right;"><span class="tt">1</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-proportional-seats-1">The Proportional Seats </h2>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+
+<p>Now, once again using the St Laguë quota and
+<span class="tt">mmp-calc.py</span>, as well as the voting data for 2019 cited
+above,<input id="fn-17" type="checkbox"><label for="fn-17">17</label><small>&ensp;<span
+id="fn-17-content">Like <span class="citation"
+data-cites="results2019"></span>, I used the figure for votes for all
+Green parties as the Green total.</span></small> I distributed the 130
+proportional seats to the 10 parties. The results can be seen in Table 2:</p>
+
+
+<table class="tcenter">
+<caption><strong>The Allocation of Proportional Seats</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><span class="tt">Party</span></strong></th>
+<th style="text-align: right;"><strong><span class="tt">Plur'y</br>Seats</span></strong></th>
+<th style="text-align: right;"><strong><span class="tt">Propor’l</br>Seats</span></strong></th>
+<th style="text-align: right;"><strong><span class="tt">Total</span></strong></th>
+<th style="text-align: right;"><strong><span class="tt">Diff.</br>from</br>2019</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">CON</span></td>
+<td style="text-align: right;"><span class="tt">292</span></td>
+<td style="text-align: right;"><span class="tt">0</span></td>
+<td style="text-align: right;"><span class="tt">292</span></td>
+<td style="text-align: right;"><span style="color: #b31b1b" class="tt"><span
+class="math inline">−</span>73</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">LAB</span></td>
+<td style="text-align: right;"><span class="tt">162</span></td>
+<td style="text-align: right;"><span class="tt">46</span></td>
+<td style="text-align: right;"><span class="tt">208</span></td>
+<td style="text-align: right;"><span class="tt" style="color: green"><span class="math inline">+</span>5</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">SNP</span></td>
+<td style="text-align: right;"><span class="tt">38</span></td>
+<td style="text-align: right;"><span class="tt">0</span></td>
+<td style="text-align: right;"><span class="tt">38</span></td>
+<td style="text-align: right;"><span class="tt" style="color: #b31b1b"><span
+class="math inline">−</span>10</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">LD</span></td>
+<td style="text-align: right;"><span class="tt">9</span></td>
+<td style="text-align: right;"><span class="tt">66</span></td>
+<td style="text-align: right;"><span class="tt">75</span></td>
+<td style="text-align: right;"><span class="tt" style="color: green"><span class="math inline">+</span>64</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">DUP</span></td>
+<td style="text-align: right;"><span class="tt">6</span></td>
+<td style="text-align: right;"><span class="tt">0</span></td>
+<td style="text-align: right;"><span class="tt">6</span></td>
+<td style="text-align: right;"><span class="tt" style="color: #b31b1b"><span
+class="math inline">−</span>2</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">SF</span></td>
+<td style="text-align: right;"><span class="tt">6</span></td>
+<td style="text-align: right;"><span class="tt">0</span></td>
+<td style="text-align: right;"><span class="tt">6</span></td>
+<td style="text-align: right;"><span  class="tt" style="color: #b31b1b"><span
+class="math inline">−</span>1</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">PC</span></td>
+<td style="text-align: right;"><span class="tt">3</span></td>
+<td style="text-align: right;"><span class="tt">0</span></td>
+<td style="text-align: right;"><span class="tt">3</span></td>
+<td style="text-align: right;"><span  class="tt" style="color: #b31b1b"><span
+class="math inline">−</span>1</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">SDLP</span></span></td>
+<td style="text-align: right;"><span class="tt">2</span></td>
+<td style="text-align: right;"><span class="tt">0</span></td>
+<td style="text-align: right;"><span class="tt">2</span></td>
+<td style="text-align: right;"><span class="tt"><span   class="math inline">+</span>0</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="tt">GRN</span></span></td>
+<td style="text-align: right;"><span class="tt">1</span></td>
+<td style="text-align: right;"><span class="tt">16</span></td>
+<td style="text-align: right;"><span class="tt">17</span></td>
+<td style="text-align: right;"><span  class="tt" style="color: green"><span class="math inline">+</span>16</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="tt">APNI</span></td>
+<td style="text-align: right;"><span class="tt">1</span></td>
+<td style="text-align: right;"><span class="tt">2</span></td>
+<td style="text-align: right;"><span class="tt">3</span></td>
+<td style="text-align: right;"><span  class="tt" style="color: green"><span class="math inline">+</span>2</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="assessing-the-outcome">Assessing the Outcome </h2>
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+
+<p>At the outset, I established the criterion by which this system was
+to primarily be judged: can it maximise its proportionality while
+minimising change to FPTP, and thus increase the chance of eventual
+adoption?</p>
+<p>The minimal change involved in SMPR shows it meets the first
+criterion perhaps as well as any system which is not literally FPTP
+could. There are no pesky numbers or panachage ballots here. The task
+now, therefore, is to see how proportional this entirely imaginary and
+unrealistic outcome is.</p>
+<p>The standard
+way<input id="fn-18" type="checkbox"><label for="fn-18">18</label><small>&ensp;<span
+id="fn-18-content">Sorry, Loosemore-Hanby.</span></small> of measuring
+disproportionality is through the least-squares index developed by
+Gallagher.<span class="citation" data-cites="gallagher1991"></span> As
+its name implies, the index is calculated using the formula below:</p>
+<div class="center">
+<p><span class="math display">$$I=\frac{\displaystyle\sum^{n}_{i=1} (s_i
+-v_i)^2 }{2}$$</span> <span class="math display">$$\begin{aligned}
+	\textrm{Where}&amp;&amp;\\
+	s&amp;=&amp;\textrm{The number of seats for a given party}\\
+	v &amp;=&amp;\textrm{The number of votes for a given party}\\
+\end{aligned}$$</span></p>
+</div>
+<p>The table below indicates that SMPR is noticeably more proportional
+in these measures, with most parties gaining reasonable approximations
+of their vote share. I repeat the strenuous, emphatic <strong>Health
+Warning</strong> given above: this is not what a ‘typical’ election
+under SMPR would give, and it is not a model of future or past
+elections. It is simply a good indicator that SMPR can produce quite
+proportional outcomes <a href="http://christophergandrud.github.io/Disproportionality_Data/">(in this case, ones which are equal or better to many countries with proportional representation).</a></p>
+<div class="center">
+<table class="tcenter">
+<caption><strong>The Relative Proportionality of FPTP and SMPR</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="tt"><strong>Party</strong></th>
+<th style="text-align: right;"><span class="tt"><strong>FPTP % of Seats</strong></th>
+<th style="text-align: right;"><span class="tt"><strong>% of Votes</strong></th>
+<th style="text-align: right;"><span class="tt"><strong>SMPR % of Seats</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><span class="tt">CON</span></td>
+<td style="text-align: right;"><span class="tt">56.15</span></td>
+<td style="text-align: right;"><span class="tt">43.63</span></td>
+<td style="text-align: right;"><span class="tt">44.92</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="tt">LAB</span></td>
+<td style="text-align: right;"><span class="tt">31.23</span></td>
+<td style="text-align: right;"><span class="tt">32.08</span></td>
+<td style="text-align: right;"><span class="tt">32.00</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="tt">SNP</span></td>
+<td style="text-align: right;"><span class="tt">7.38</span></td>
+<td style="text-align: right;"><span class="tt">3.88</span></td>
+<td style="text-align: right;"><span class="tt">5.85</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="tt">LD</span></td>
+<td style="text-align: right;"><span class="tt">1.69</span></td>
+<td style="text-align: right;"><span class="tt">11.55</span></td>
+<td style="text-align: right;"><span class="tt">11.54</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="tt">DUP</span></td>
+<td style="text-align: right;"><span class="tt">1.23</span></td>
+<td style="text-align: right;"><span class="tt">0.76</span></td>
+<td style="text-align: right;"><span class="tt">0.92</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="tt">SF</span></td>
+<td style="text-align: right;"><span class="tt">1.08</span></td>
+<td style="text-align: right;"><span class="tt">0.57</span></td>
+<td style="text-align: right;"><span class="tt">0.92</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="tt">PC</span></td>
+<td style="text-align: right;"><span class="tt">0.62</span></td>
+<td style="text-align: right;"><span class="tt">0.48</span></td>
+<td style="text-align: right;"><span class="tt">0.46</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="tt">SDLP</span></td>
+<td style="text-align: right;"><span class="tt">0.31</span></td>
+<td style="text-align: right;"><span class="tt">0.37</span></td>
+<td style="text-align: right;"><span class="tt">0.31</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="tt">GRN</span></td>
+<td style="text-align: right;"><span class="tt">0.15</span></td>
+<td style="text-align: right;"><span class="tt">2.70</span></td>
+<td style="text-align: right;"><span class="tt">2.62</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="tt">APNI</span></td>
+<td style="text-align: right;"><span class="tt">0.15</span></td>
+<td style="text-align: right;"><span class="tt">0.42</span></td>
+<td style="text-align: right;"><span class="tt">0.46</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="tt"><strong>Gall. Index</strong></span></td>
+<td style="text-align: right;"><span class="tt"><strong>~  12.5</strong></span></td>
+<td style="text-align: right;"><span class="tt"></span></td>
+<td style="text-align: right;"><span class="tt"><strong>~ 4</strong></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div></div>
+<div>
+
+
+<p class="backtoc"><small><a href="#TOC">back to TOC</a></small>
+</p>
+</div>
+
+ <div class="clink">
+<a href="https://cdn.jsdelivr.net/gh/ezgranet/smpr/smpr-white-paper.pdf"><em>Download this white paper as a <span class="sc">PDF</span></em></a>
+</div>
+
+
+
+<div class="cbutton">
+<input type="checkbox"name="select-all" id="select-all" class='chk-btn' />
+<label for='select-all'>Expand/Hide All Footnotes</label>
+
+</div>
+
+
+
+
+<div></div>
+
+<p class="pcenter" text-align="center"><small>© <script>document.write(new Date().getFullYear())</script>, Elijah Granet, but licensed to all under the terms of Creative Commons licence <a href="https://creativecommons.org/licenses/by-sa/4.0/"><span class="tt">CC-BY-SA 4.0</span></a></small></p></div>
+
+
+
+
+</div>
+
+
+<script
+  src="https://span.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/scripts/footy.js"
+        ></script>
+
+
+</body>
+</html>
