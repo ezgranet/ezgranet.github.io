@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+  src="https://span.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/scripts/footy.js"
+        ></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-alpha.1/es5/tex-mml-chtml.js"></script>
+<script type="text/javascript">
+  
+
+  MathJax = {
+  output: {
+    fontPath: 'https://cdn.jsdelivr.net/npm/mathjax-stix2-font/es5/output/fonts/mathjax-pagella'
+  }
+};
+
+</script>
+    <link href='https://use.typekit.net/wgd1jco.css' rel='stylesheet'/>
+  <style type="text/css">
+
+@font-face {
+  font-family: 'tgp';
+      src: url('https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/final-palp/PalatineP-BoldItalic.otf')  format('opentype'); / /* Safari, Android, iOS */       
+
+  font-style:   italic ;
+
+  font-weight:  bold ;
+
+}
+
+@font-face {
+  font-family: 'tgp';
+      src: url('https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/final-palp/PalatineP-Bold.otf')  format('opentype'); /* Safari, Android, iOS */
+       
+  font-style:   normal;
+  font-weight:  bold ;
+}
+
+
+
+@font-face {
+  font-family: 'tgp';
+src: url('https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/final-palp/PalatineP-Italic.otf')  format('opentype'); /* Safari, Android, iOS */
+  font-style:   italic;
+  font-weight:  normal ;
+}
+
+@font-face {
+  font-family: 'tgp';
+       src: url('https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/final-palp/PalatineP-Regular.otf')  format('opentype'); /* Safari, Android, iOS */       
+  font-style:   normal;
+  font-weight:  normal ;}
+
+
+
+    p input {
+  display: none !important;
+}
+.sharing-button  {
+  margin: 2px !important;
+    }
+h1 {
+  font-family: tgp, serif !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+font-size:150% !important;
+  text-align: center;
+}
+.myh2  {
+    font-family: tgp, serif !important;
+font-style: normal !important ;
+font-weight: bold ;
+  text-align: center ;
+}
+  div.bottom-three {
+     margin-bottom: 1cm !important;
+  }
+
+
+  .limited * {
+    font-size: 75% !important;
+    }
+}
+@font-face {
+    font-family: QTCaslanOpen;
+    src: 
+      url(https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/qtco/QTCaslanOpen.otf) format(opentype);
+    font-weight: normal;
+    font-style: normal;
+}
+  .smallcaps { /* OK, a bit contrived... */
+   font-variant-numeric: inherit ;
+   font-feature-settings: "c2sc", "smcp"; !important;    
+  letter-spacing: 2px;}
+tr {  padding: 0 25px;
+}
+td {  padding: 0 25px;
+}
+th {  padding: 0 25px;
+}
+  code * {
+  font-family: "source-code-pro" monospace !important; 
+     font-variant-numeric: lining-nums tabular-nums !important;}
+
+  }
+
+.fleuron
+{
+    margin-top: 30px;
+margin-bottom: 30px;
+}
+img.myimage {
+    width: 1em !important;
+  height: .25em !important;
+}
+
+
+/* Sup text */
+p input + label {
+  font: 0.7em / 1 cardo, serif;
+  font-feature-settings: "onum", "pnum";
+  vertical-align: super !important;
+  cursor: pointer !important;
+  transition: color 0.1s !important;
+}
+    h3, .entry-title  {  text-align: center !important;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+      font-size: 150% !important;
+}
+   
+
+ .post-header, post-header-container > container, post-header-line-1  {  text-align: center !important;
+      margin-top:30px !important;
+            margin-bottom:30px !important;
+
+        display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width:  50% !important;
+
+}
+.backtoc  {
+  text-align: center !important;
+  display: block;
+  margin-top:-15px !important;
+    margin-left: auto !important;
+
+  margin-right: auto !important;
+  width:  30%;
+}
+
+    
+.pcenter  {
+  text-align: center !important;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width:  30%;
+}
+.catchwords {
+    text-align: center !important;
+
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:  50%;
+  
+}
+
+.dcenter
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icenter
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+p input + label:before {
+  content: "[";
+}
+
+p input + label:after {
+  content: "]";
+}
+
+p input + label:hover {
+  color: #838374;
+}
+
+/* Footnote text */
+.sans * {
+
+
+}
+p.copyright-center {
+
+   text-align: center;
+
+}
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+
+p input:checked + label + small {
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+    p+p.small {  font-family: alegreya-sans, sans-serif !important;
+    }
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+
+    small * {
+    font-family: alegreya-sans, sans-serif !important;
+}
+    p > small * {    font-family: alegreya-sans, sans-serif !important;
+}
+
+/******* Flavors *******/
+
+/* inline reveal */
+ input:checked + label + small {
+  margin: 0 0.15em;
+}
+
+.tcenter{margin-left: auto !important;
+margin-right: auto !important;
+margin-top:.5cm !important;
+
+}
+  ol {
+    margin-left: 50px !important;
+margin-right: 50px !important;
+
+   }
+
+     ul  {
+    margin-left: 25% !important;
+margin-right: 25% !important;
+        padding-left: -20px !important;
+
+
+   }
+
+
+p  {
+    text-align: justify !important;
+margin-top: 0 !important;
+margin-bottom: 0 !important;
+margin-left: 50px !important;
+margin-right: 50px !important;
+font-family: 'tgp', serif !important;
+  position: relative;
+}
+
+p + p  {
+    text-indent: 1.25em !important;
+
+  margin-top: 0 !important;
+margin-bottom: 0 !important;
+  text-align: justify !important;
+}
+
+input.chk-btn {
+  display: none;
+}
+input.chk-btn + label {
+  border: 1px solid grey;
+  background: ghoswhite;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+input.chk-btn:not(:checked) + label:hover {
+  box-shadow: 0px 1px 3px;
+}
+input.chk-btn + label:active,
+input.chk-btn:checked + label {
+  box-shadow: 0px 0px 3px inset;
+  background: #eee;
+}
+.cbutton {
+text-align: center;
+}
+.clink {
+    margin-top: 30px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+    small * {
+a:link {
+  color: #355496 !important;
+}
+  color: #545449 !important;
+font-family: alegreya-sans, sans-serif !important;
+}
+.qtco  {font-family: QTCaslanOpen !important;
+font-size: x-large;
+letter-spacing: 2px !important;}
+    p *  {
+
+
+      max-width:80% !important; }
+
+    body * {max-width: 100% !important;
+   }
+    span.byline.post-labels  {display: none !important;}
+ div.post-footer-line.post-footer-line-2   {display: none !important;}
+    #sharing-button-Blog1-byline-7749537797363895262 {width: normal px !important;}
+div.post-header-container.container  {display: none !important;}
+   </style>
+
+  <style type="text/css">
+strong.tt {
+	font-family: "source-code-pro", monospace !important;
+font-weight: bold  !important;
+	font-feature-settings: "tnum", "lnum" !important;
+
+
+}
+
+     .tt  { /* OK, a bit contrived... */
+font-family: "source-code-pro", monospace !important; 
+font-feature-settings: "tnum", "lnum" !important;
+  
+   }
+
+   caption {
+
+    font-family: tgp, serif !important;
+   }
+
+</style>
+      
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ezgranet-vita</title>
+</head>
+<body>
+	
+<h1>Curriculum vitæ</br>of</br>Elijah Zachary Granet</h1>
+
+
+<div class="fleuron">
+
+<img src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/img/sep.png" alt="endpiece fleuron" width="300px" class="icenter">
+
+</div>
+
+
+
+    <div  class="fleuron" >
+        <div >
+        <a href="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/cv/ezgranet-vita-nophone-noaddress.pdf">  <img src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/cv-img/uk.png" alt="uk" width="150px" class="icenter">
+<p class="pcenter"></a>
+           <a href="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/cv/ezgranet-vita-nophone-noaddress.pdf">Click here to view the <span class="smallcaps">CV</span> in British English format.</a></p>
+        </div>
+        </br>
+        </br>
+        </br>
+
+</br>
+
+        <div class="fleuron">
+         <a href="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/cv/ezgranet-vita-usa-nophone-noaddress.pdf" ><img src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/cv-img/usa.jpg" alt="usa" width="150px" class="icenter"></a>
+          <p class="pcenter"></a>
+           <a href="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/cv/ezgranet-vita-usa-nophone-noaddress.pdf">Click here to view the <span class="smallcaps">C.V.</span> in American English format.</a></p>
+         </div>
+
+</br>
+
+
+
+
+<div class="fleuron">
+
+<img src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/img/sep.png" alt="endpiece fleuron" width="300px" class="icenter">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
