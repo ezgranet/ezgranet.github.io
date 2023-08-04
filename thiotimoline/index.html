@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+  src="https://span.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/9fb057d2ec.js" crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/scripts/footy.js"
+        ></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-alpha.1/es5/tex-mml-chtml.js"></script>
+<script type="text/javascript">
+  
+
+  MathJax = {
+  output: {
+    fontPath: 'https://cdn.jsdelivr.net/npm/mathjax-stix2-font/es5/output/fonts/mathjax-pagella'
+  }
+};
+
+</script>
+    <link href='https://use.typekit.net/wgd1jco.css' rel='stylesheet'/>
+  <style type="text/css">
+
+@font-face {
+  font-family: 'tgp';
+      src: url('https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/final-palp/PalatineP-BoldItalic.otf')  format('opentype'); / /* Safari, Android, iOS */       
+
+  font-style:   italic ;
+
+  font-weight:  bold ;
+
+}
+
+@font-face {
+  font-family: 'tgp';
+      src: url('https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/final-palp/PalatineP-Bold.otf')  format('opentype'); /* Safari, Android, iOS */
+       
+  font-style:   normal;
+  font-weight:  bold ;
+}
+
+
+
+@font-face {
+  font-family: 'tgp';
+src: url('https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/final-palp/PalatineP-Italic.otf')  format('opentype'); /* Safari, Android, iOS */
+  font-style:   italic;
+  font-weight:  normal ;
+}
+
+@font-face {
+  font-family: 'tgp';
+       src: url('https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/final-palp/PalatineP-Regular.otf')  format('opentype'); /* Safari, Android, iOS */       
+  font-style:   normal;
+  font-weight:  normal ;}
+
+
+
+    p input {
+  display: none !important;
+}
+.sharing-button  {
+  margin: 2px !important;
+    }
+h1 {
+  font-family: tgp, serif !important;
+  font-style: italic !important;
+  font-weight: normal !important;
+
+  text-align: center;
+}
+.myh2  {
+    font-family: tgp, serif !important;
+font-style: normal !important ;
+font-weight: bold ;
+  text-align: center ;
+}
+  div.bottom-three {
+     margin-bottom: 1cm !important;
+  }
+
+
+  .limited * {
+    font-size: 75% !important;
+    }
+}
+@font-face {
+    font-family: QTCaslanOpen;
+    src: 
+      url(https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/qtco/QTCaslanOpen.otf) format(opentype);
+    font-weight: normal;
+    font-style: normal;
+}
+  .smallcaps { /* OK, a bit contrived... */
+   font-variant-numeric: inherit ;
+   font-feature-settings: &quot;c2sc&quot;, &quot;smcp&quot; !important;    
+  letter-spacing: 2px;}
+tr {  padding: 0 25px;
+}
+td {  padding: 0 25px;
+}
+th {  padding: 0 25px;
+}
+  code * {
+  font-family: "source-code-pro" monospace !important; 
+     font-variant-numeric: lining-nums tabular-nums !important;}
+
+  }
+
+.fleuron
+{
+    margin-top: 30px;
+margin-bottom: 30px;
+}
+img.myimage {
+    width: 1em !important;
+  height: .25em !important;
+}
+
+
+/* Sup text */
+p input + label {
+  font: 0.7em / 1 cardo, serif;
+  font-feature-settings: "onum", "pnum";
+  vertical-align: super !important;
+  cursor: pointer !important;
+  transition: color 0.1s !important;
+}
+    h3, .entry-title  {  text-align: center !important;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+      font-size: 150% !important;
+}
+   
+
+ .post-header, post-header-container > container, post-header-line-1  {  text-align: center !important;
+      margin-top:30px !important;
+            margin-bottom:30px !important;
+
+        display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width:  50% !important;
+
+}
+.backtoc  {
+  text-align: center !important;
+  display: block;
+  margin-top:-15px !important;
+    margin-left: auto !important;
+
+  margin-right: auto !important;
+  width:  30%;
+}
+
+    
+.pcenter  {
+  text-align: center !important;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width:  30%;
+}
+.catchwords {
+    text-align: center !important;
+
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:  50%;
+  
+}
+
+.dcenter
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icenter
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+p input + label:before {
+  content: "[";
+}
+
+p input + label:after {
+  content: "]";
+}
+
+p input + label:hover {
+  color: #838374;
+}
+
+/* Footnote text */
+.sans * {
+
+
+}
+p.copyright-center {
+
+   text-align: center;
+
+}
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+
+p input:checked + label + small {
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+.pcenter.small {  font-family: alegreya-sans, sans-serif !important;
+    }
+
+small {  font-family: alegreya-sans, sans-serif !important; font-size:smaller !important;
+    }
+p.small {  font-family: alegreya-sans, sans-serif !important;
+    }
+    p+p.small {  font-family: alegreya-sans, sans-serif !important;
+    }
+
+p input + label + small {
+  transition: opacity 0.2s 0.05s;
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  font-family: alegreya-sans, sans-serif !important;
+
+}
+
+    small * {
+    font-family: alegreya-sans, sans-serif !important;
+}
+    p > small * {    font-family: alegreya-sans, sans-serif !important;
+}
+
+/******* Flavors *******/
+
+/* inline reveal */
+ input:checked + label + small {
+  margin: 0 0.15em;
+}
+
+.tcenter{margin-left: auto !important;
+margin-right: auto !important;
+margin-top:.5cm !important;
+
+}
+  ol {
+    margin-left: 50px !important;
+margin-right: 50px !important;
+
+   }
+
+     ul  {
+    margin-left: 25% !important;
+margin-right: 25% !important;
+        padding-left: -20px !important;
+
+
+   }
+
+
+p  {
+    text-align: justify !important;
+margin-top: 0 !important;
+margin-bottom: 0 !important;
+margin-left: 50px !important;
+margin-right: 50px !important;
+font-family: 'tgp', serif !important;
+  position: relative;
+}
+
+p + p  {
+    text-indent: 1.25em !important;
+
+  margin-top: 0 !important;
+margin-bottom: 0 !important;
+  text-align: justify !important;
+}
+
+input.chk-btn {
+  display: none;
+}
+input.chk-btn + label {
+  border: 1px solid grey;
+  background: ghoswhite;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+input.chk-btn:not(:checked) + label:hover {
+  box-shadow: 0px 1px 3px;
+}
+input.chk-btn + label:active,
+input.chk-btn:checked + label {
+  box-shadow: 0px 0px 3px inset;
+  background: #eee;
+}
+.cbutton {
+text-align: center;
+}
+.clink {
+    margin-top: 30px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+    small * {
+a:link {
+  color: #355496 !important;
+}
+  color: #545449 !important;
+font-family: alegreya-sans, sans-serif !important;
+}
+.qtco  {font-family: QTCaslanOpen !important;
+font-size: x-large;
+letter-spacing: 2px !important;}
+    p *  {
+
+
+      max-width:80% !important; }
+
+    body * {max-width: 100% !important;
+   }
+    span.byline.post-labels  {display: none !important;}
+ div.post-footer-line.post-footer-line-2   {display: none !important;}
+    #sharing-button-Blog1-byline-7749537797363895262 {width: normal px !important;}
+div.post-header-container.container  {display: none !important;}
+   </style>
+
+  <style type="text/css">
+strong.tt {
+	font-family: "source-code-pro", monospace !important;
+font-weight: bold  !important;
+	font-feature-settings: "tnum", "lnum" !important;
+
+
+}
+
+     .tt  { /* OK, a bit contrived... */
+font-family: "source-code-pro", monospace !important; 
+font-feature-settings: "tnum", "lnum" !important;
+  
+   }
+
+   caption {
+
+    font-family: tgp, serif !important;
+   }
+
+</style>
+      
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thiotimoline</title>
+  <description>The Endochronic Properties of Resublimated Thiotimoline, a humorous satire of scientific  journal articles by Isaac Asimov.  </description>
+</head>
+<body>
+	
+<h1>The Endochronic Properties of Resublimated Thiotimoline</h1>
+
+
+<p class="pcenter">
+<em>by</em></br><strong>Isaac Asimov</strong></br><small>
+originally published in</br><em>Astounding Science Fiction</em></br>March 1948</small>
+</p>
+
+
+ <div class="clink">
+
+<a href="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/docs/thiotim-latex.pdf"><em>Download this article as a <span class="sc">PDF</span></em></a>
+
+</div>
+
+
+</br>
+
+<p>The correlation of the structure to organic molecules with their
+various properties, physical and chemical, has in recent years afforded
+much insight into the mechanism of organic reactions, notably in the
+theories of resonance and mesomerism as developed in the last decade.
+The solubilities of organic compounds in various solvents has become of
+particular interest in this connection through the recent discovery of
+the endochronic nature of thiotimoline.<sup>1</sup></p>
+<p>It has been long known that the solubility of organic compounds in
+polar solvents such as water is enhanced by the presence uponhydrocarbon
+nucleus of hydrophilic—<em>i</em>.<em>e</em>. water-loving—groups, such
+as the hydroxy (-OH), amino (-NH<sub>2</sub>), or sulfonic acid
+(SO<sub>3</sub>H) groups. Where the physical characteristics of two
+given compounds—particularly the degree of subdivision of the
+material—are equal, then the time to solution—expressed in seconds per
+gram of material per milliliter of solvent decreases with the number of
+hydrophilic groups present. Catechol, for instance, with two hydroxy
+groups on the benzene nucleus dissolves considerably more quickly than
+does phenol with only one hydroxy group on the nucleus. Feinschreiber
+and Hravlek<sup>2</sup> in their the studies on the problem: have
+contended that with increasing hydrophilism, the time of solution
+approaches zero. That this analysis is not entirely correct was shown
+when it was discovered that the compound thiotimoline will dissolve in
+water—in the proportions of 1 gm./ml. in <em>minus</em> 1.12 seconds.
+That is, it will dissolve before the water is added.</p>
+<p>Previous communications from these laboratories indicated
+thiotimoline to contain at least fourteen hydroxy groups, two amino
+groups and one sulfonic acid group.<sup>3</sup> The presence of a nitro
+group (-NO<sub>2</sub>) in addition has not yet been confirmed and no
+evidence as yet exists as to the nature of the hydrocarbon nucleus,
+though an at least partly aromatic structure seems certain.</p>
+<h1 class="unnumbered" id="the-endochochronometer">The
+Endochochronometer</h1>
+<p>First attempts to measure the time of solution of thiotimoline
+quantitatively met with considerable difficulty because of the very
+negative nature of the value. The fact that the chemical dissolved prior
+to the addition of the water made the attempt natural to withdraw the
+water after solution and before addition. This, fortunately for the law
+of Conservation of Mass-Energy, never succeeded since solution never
+took place unless the water was eventually added. The question is, of
+course, instantly raised as to how the thiotimoline can “know” in
+advance whether the water will ultimately be added or not. Though this
+is not properly within our province as physical chemists, much recent
+material has been published within the last year upon the psychological
+and philosophical problems thereby posed.<sup>4’5</sup></p>
+<p>Nevertheless, the chemical difficulties involved rest in the fact
+that the time of solution varies enormously with the exact mental state
+of the experimenter. A period of even slight hesitation in adding the
+water reduces the negative time of solution, not infrequently wiping it
+out below the limits of detection. To avoid this, a mechanical device
+has been constructed, the essential design of which has already been
+reported in a previous communication.<sup>6</sup> This device, termed
+the endochronometer, consists of a cell 2 cubic centimeters in size into
+which -a desired weight of thiotimoline is placed, making certain that a
+small hollow extension at the bottom of the solution cell—1 millimeter
+in internal diameter—is filled. To the cell, is attached an automatic
+pressure micro-pipette containing a specific volume of the solvent
+concerned. Five seconds after the circuit is closed, this solvent is
+automatically delivered into the cell containing the thiotimoline.
+During the time of action, a ray of light is focused upon the small
+cell-extension described above, and at the instant of solution, the
+transmission of this light will no longer be impeded by the presence of
+solid thiotimoline. Both the instant of solution—at which time the
+transmission of light is recorded by a photoelectric device—-and the
+instant of solvent addition can be determined with an accuracy of better
+than 0.01% If the first value is subtracted from the second, the time of
+solution (T) can be determined.</p> 
+<p>The entire process is conducted in a thermostat maintained at 25.00° C—to an accuracy of 0.01° C.</p>
+<h1 class="unnumbered" id="thiotimoline-purity">Thiotimoline Purity</h1>
+<p>The extreme sensitivity of this method highlights the deviations
+resulting from trifling impurities present in thiotimoline. (Since no
+method of laboratory synthesis of the substance has been devised, it may
+be practically obtained only through tedious isolation from its natural
+source, the bark of the shrub <em>Rosacea Karlsbadensis
+rufo</em>.<sup>7</sup>) Great efforts were therefore made to purify the
+material through repeated recrystallizations from conductivity
+water—twice re-distilled in an all-tin apparatus—and through final
+sublimations. A comparison of the solution times (T) at various stages
+of the purification process is shown in Table I.</p>
+
+</br>
+<div class="dcenter">
+<p class="pcenter"><strong>Table I</strong></p>
+<table class="tcenter">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>Purification Stage</em></td>
+<td style="text-align: left;"><em>Average “T”(12 obs.)</em></td>
+<td style="text-align: right;"><em>“T” Extremes</em></td>
+<td style="text-align: right;"><em>% error</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">As isolated</td>
+<td style="text-align: left;">—0.72</td>
+<td style="text-align: right;">—0.25; —1.01</td>
+<td style="text-align: right;">34.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">First Recrystallization</td>
+<td style="text-align: left;">—0.95</td>
+<td style="text-align: right;">—0.84; —1.09</td>
+<td style="text-align: right;">9.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Second Recrystallization</td>
+<td style="text-align: left;">—1.05</td>
+<td style="text-align: right;">—0.99; —1.10</td>
+<td style="text-align: right;">4.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Third Recrystallization</td>
+<td style="text-align: left;">—1.11</td>
+<td style="text-align: right;">—1.08; —1.13</td>
+<td style="text-align: right;">1.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fourth Recrystallization</td>
+<td style="text-align: left;">—1.12</td>
+<td style="text-align: right;">—1.10; —1.13</td>
+<td style="text-align: right;">1.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">First Resublimation</td>
+<td style="text-align: left;">—1.12</td>
+<td style="text-align: right;">—1.11; —1.13</td>
+<td style="text-align: right;">0.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Second Resublimation</td>
+<td style="text-align: left;">—1.122</td>
+<td style="text-align: right;">—1.12; —1.13</td>
+<td style="text-align: right;">0.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</br>
+
+
+<p>It is obvious from Table I that for truly quantitative significance,
+thiotimoline purified as described must be used. After the second
+resublimation, for instance the error involved in an even dozen
+determinations is less than 0.7% with the extreme values being —1.119
+seconds and —1.126 seconds.</p>
+<p>In all experiments described subsequently in this study, thiotimoline
+so purified has been used.</p>
+<h1 class="unnumbered" id="time-of-solution-and-volume-of-solvent">Time
+of Solution and Volume of Solvent</h1>
+<p>As would seem reasonable, experiments have shown that increasing the
+volume of solvent enables the thiotimoline to dissolve more
+quickly—<em>i</em>.<em>e</em>., with an increasingly negative time of
+solution. From Figure 1, however, we can see that this increase in
+endochronic properties levels off rapidly after a volume of solvent of
+approximately 1.25 ml. This interesting plateau effect has appeared with
+varying volume of solvent for all varieties of solvents used in these
+laboratories, just as in all cases the time of solution approaches zero
+with decreasing volume of solvent.</p>
+<div>
+<img class="icenter" src="fig-1.png" style="width:3in" alt="image" />
+</div>
+<h1 class="unnumbered"
+id="time-of-solution-and-concentration-of-a-given-ton">Time of Solution
+and Concentration of a Given Ton</h1>
+<p>In Figure 2, the’ results. are given of the effect of the time of
+solution (T) of varying the volume of solvent, where the solvent
+consists of varying concentrations of sodium chloride solution. It can
+be seen that although in each case, the volume at which this plateau is
+reached differs markedly with the concentration, the heights of the
+plateau are constant (<em>i</em>.<em>e</em>. —1.13). The volume at which
+it is reached, hereinafter termed the Plateau Volume (PV), decreases
+with decreasing concentration of sodium chloride, approaching the PV for
+water as the NaCl concentration approaches zero. It is, therefore,
+obvious that a sodium chloride solution of unknown concentration can be
+quite accurately characterized by the determination of its PV, where
+other salts are absent.</p>
+<div class="icenter">
+<p><img  class="icenter" src="fig-2.png" style="width:3in" alt="image" /></p>
+</div>
+<p>This usefulness of PV extends to other ions as well. Figure 3 gives
+the endochronic curves for 0.001 molar solutions of sodium chloride,
+sodium bromide, and potassium chloride. Here, the PV in each case is
+equal within the limits of experimental error—since the concentrations
+in each case are equal—but the Plateau Heights (PH) <em>are</em>
+different.</p>
+<div class="icenter">
+<p><img class="icenter" src="fig-3.png" style="width:3in" alt="image" /></p>
+</div>
+<p>A tentative conclusion that might be reached from this experimental
+data is that the PH is characteristic of the nature of the ions present
+in solution whereas the PV is characteristic of the concentration of
+these ions. Table II gives the values of Plateau Height and Plateau
+Volume for a wide variety of salts in equal concentrations, when present
+alone.</p>
+
+</br>
+
+<div class="dcenter">
+<p class="pcenter"><strong>Table II</strong></p>
+<table class="tcenter">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><em>Solvent (Salt solutions in 0.001 M
+concentration)</em></td>
+<td style="text-align: center;"><em>Plateau Height (PH) seconds</em></td>
+<td style="text-align: center;"><em>Plateau Volume (PV)
+milliliters</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Water</td>
+<td style="text-align: left;">—1.13</td>
+<td style="text-align: center;">1.25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sodium Chloride solution</td>
+<td style="text-align: left;">—1.13</td>
+<td style="text-align: center;">1.37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sodium Bromide solution</td>
+<td style="text-align: left;">—1.10</td>
+<td style="text-align: center;">1.37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Potassium Chloride solution</td>
+<td style="text-align: left;">—1.08</td>
+<td style="text-align: center;">1.37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sodium Sulphate solution</td>
+<td style="text-align: left;">—0.72</td>
+<td style="text-align: center;">1.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Calcium Chloride solution</td>
+<td style="text-align: left;">—0.96</td>
+<td style="text-align: center;">1.58</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Magnesium Chloride solution</td>
+<td style="text-align: left;">—0.85</td>
+<td style="text-align: center;">1.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Calcium Sulphate solution</td>
+<td style="text-align: left;">—0.61</td>
+<td style="text-align: center;">1.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sodium Phosphate solution</td>
+<td style="text-align: left;">—0.32</td>
+<td style="text-align: center;">1.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ferric Chloride solution</td>
+<td style="text-align: left;">—0.32</td>
+<td style="text-align: center;">1.99</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</br>
+<p>‘The most interesting variation to be noted in Table II is that of
+the TV with the valence type of the salt present. In the ease of salts
+containing pairs of singly-charged ions—<em>i</em>.<em>e</em>. sodium
+chloride, potassium chloride, and sodium bromide—the PV is constant for
+all. This holds also for those salts containing one singly charged ion
+and one doubly charged ion—<em>i</em>.<em>e</em>. sodium sulphate,
+calcium chloride, and magnesium chloride—where the PV, though equal
+among the three varies markedly from those of the first set. The PV is,
+therefore, apparently a function of the ionic strength of the
+solution.</p>
+<p>This effect also exists in connection with the Plateau Height, though
+less regularly. In the case of singly charged ions, such as in the first
+three salts listed in Table II, the PH is fairly close to that of water
+itself. It falls considerably where doubly charged ions, such as
+sulphate or calcium are present. And when the triply charged phosphate
+ion or ferric ion is present, the value sinks to merely a quarter of its
+value in water.</p>
+<h1 class="unnumbered" id="time-of-solution-and-mixtures-of-ions">Time
+of Solution and Mixtures of Ions</h1>
+<p>Experiments currently in progress in these laboratories age concerned
+with the extremely important question of the variation of these
+endochronic properties of thiotimoline in the presence of mixtures ‘of
+ions. ‘The state of our data at present does not warrant very general
+conclusions, but even our preliminary work gives hope of the further
+development of the endochronic methods of analysis. Thus, in Figure 4,
+we have the endochronic curve where a mixture of 0.001M Sodium Chloride
+and 0.001 Ferric Chloride solutions is the solvent. Here, two sharp
+changes in slope can be seen: the first at‘a solution time of —0.29, and
+the second at —1.13, these being the PH’s characteristic of Ferric
+Chloride and Sodium Chloride respectively—see Table II. The PH for a
+given salt would thus appear not to be affected by the presence of other
+salts.</p>
+
+</br>
+
+<img class="icenter" src="fig-4.png" style="width:3in" alt="image" />
+
+</br>
+
+<p>This is definitely not the case, however, for the PV, and it is to a
+quantitative elucidation of the variation of PV with impurities in the
+solvent that our major efforts are now directed.</p>
+<h1 class="unnumbered" id="summary">Summary</h1>
+<p>Investigations of the endochronic qualities of thiotimoline have
+shown that:</p>
+<ol>
+<li><p>Careful purification of the material is necessary for obtaining
+quantitative results.</p></li>
+<li><p>Increasing the volume of solvent results in increasing the
+negative time of solution to a constant value known as the Plateau
+Height (PH), at a volume of solvent known as the Plateau Volume
+(PV).</p></li>
+<li><p>The value of the PH is characteristic of the nature of the ions
+present in the solvent, varying with the ionic strength of the solution
+and not varying with the addition of other ions.</p></li>
+<li><p>The value of the PV is characteristic of the concentration of the
+ions present in the solvent, being constant for different ions in
+solution of equal ionic strength, but, varying markedly with the
+admixtures of second varieties of ions.</p></li>
+</ol>
+<p>As a result of all this, it is suggested that endochronic methods
+offer a means of rapid—2 minutes or less—and accurate—within 0.1% at
+least—analysis of inorganic, water-soluble materials.</p>
+<h1 class="unnumbered" id="bibliography">Bibliography</h1>
+<ol>
+<li><p>P. Krum and L. Eshkin, <em>Journal of Chemical Solubilitics</em>,
+<em>27</em>, 109–114 (1944). “Concerning the Anomalous Solubility of
+Thiotimoline.”</p></li>
+<li><p>E. J. Feinschreiber and Y. Hravlek, <em>Journal of Chemical
+Solubilities</em>, <em>22</em>, 57–68 (1939), “Solubility Speeds and
+Hydrophilic Groupings.”</p></li>
+<li><p>P. Krum, L. Eshkin. and O. Nile, <em>Annals of Synthetic
+Chemistry</em>, <em>115</em>, 1122-1145; 1208–1215 (1945), “Structure of
+Thiotimoline. Parts I &amp; II.”</p></li>
+<li><p>G. H. Freudler, <em>Journal of Psychochemistry</em>, <em>2</em>,
+476–488 (1945), “Initiative and Determination: Are They Influenced by
+Diet?—As tested by Thiotimoline Solubility Experiments.”</p></li>
+<li><p>E. Harley-Short, <em>Philosophical Pro- ceedings &amp;
+Reviews</em>, <em>15</em>, 125–197 (1946). “Determinism and Free-Will.
+The Appli- cation of Thiotimoline Solubility to Marxian Dialectic.” P.
+Krum, <em>Journal of Chemical Solubilities</em>, <em>29</em>, 818–819
+(1946), “A Device for the Quantitative Measurement of Thiotimoline
+Solubility Speed.”</p></li>
+<li><p>A. Roundin, B. Ley, and Y. J. Prutt, <em>Proceedings of the
+Society of Plant Chenstry</em>, <em>80</em>, 11–18 (1930), “Natural
+Products isolated from shrubs of the genus <em>Rosacea</em>.”</p></li>
+<li><p>Tiotimolin kak Ispitatel Marksciiskoy dilektiki B. Kreschiatika,
+<em>Journal adil i Sovetskoy Ticorit</em> Vol. 11, No. 3.</p></li>
+<li><p>Philossopliia Neopredelennosti ieal molin, Molvinski Pogost i Z.
+Brikalo, <em>Mir i Kultura</em> Vol. 2, No. 31.</p></li>
+</ol>
+
+
+<div></div>
+
+
+
+
+
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://cdn.jsdelivr.net/gh/ezgranet/mywebsite/scripts/footy.js"
+        ></script>
+
+</body>
+</html>
