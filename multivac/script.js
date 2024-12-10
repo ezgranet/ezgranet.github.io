@@ -48,8 +48,12 @@ function typePunchCardEffect(container, text, speed = 100) {
       typingSound.play(); // Play typing sound
       i++;
     } else {
+
       clearInterval(interval); // Stop when all characters are displayed
       returnSound.play(); // Play return sound at the end
+            typingSound.pause(); // Play typing sound
+
+
     }
   }, speed);
 }
