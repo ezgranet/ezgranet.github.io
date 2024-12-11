@@ -133,9 +133,10 @@ body {
 .tape-line {
   position: absolute;
   top: 50%;
+  text-transform: uppercase;
   transform: translateY(-50%) translateX(100%); /* Start off-screen to the right */
   height: 40px; /* Height of the tape */
-  font-family: 'doto' !important;
+  font-family: 'Doto' !important;
   font-size: 20px;
   color: #333; /* Dark text color */
   opacity: 0.65;
