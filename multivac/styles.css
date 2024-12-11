@@ -155,3 +155,20 @@ background-color: red;
 color: white;
 font-size: x-large;
 }
+
+function typePunchCardEffect(container, text, speed = 100) {
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i < text.length) {
+      container.textContent += text.charAt(i); // Append the next character
+      i++;
+    } else {
+      clearInterval(interval); // Stop when all characters are displayed
+    }
+  }, speed);
+}
+
+// Example usage
+const outputTape = document.getElementById("output-tape");
+const customResponse = "THERE IS YET INSUFFICIENT DATA TO ANSWER";
+typePunchCardEffect(outputTape, customResponse, 50); // Adjust speed as needed
