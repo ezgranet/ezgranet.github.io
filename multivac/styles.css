@@ -106,32 +106,64 @@ body {
   animation: blink 1s steps(2, start) infinite;
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
+/* Basic style for the punch card tape container */
+#output-tape {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+  color: #333; /* Dark text color for better contrast */
+  background-color: #f4e1b2; /* Punch card tape color (light beige) */
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent text from wrapping */
+  line-height: 1.5; /* Add some spacing between letters */
+  letter-spacing: 3px; /* Increased spacing between characters for perforations */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Slight shadow to simulate depth */
+}
+
+/* Style for the tape background animation */
+#output-tape::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%; /* Start completely off the right side */
+  width: 100%;
+  height: 100%;
+  background-color: #d1b087; /* Slightly darker punch card color */
+  animation: tapeReveal 1s forwards; /* Animate from right to left */
+}
+
+/* Animation to simulate the "spitting out" of tape */
+@keyframes tapeReveal {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%; /* Moves to the left */
   }
 }
 
-.output-tape {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  letter-spacing: 0.1rem;
-  font-family: "Courier New", Courier, monospace;
-  color: #333; /* Inked text color */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  white-space: pre-wrap; /* Preserve formatting like spaces and line breaks */
-  border: 10px dotted #aaa; /* Punch tape border */
-  padding: 10px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #f9f8f4,
-    #f9f8f4 5px,
-    #e0dfdb 5px,
-    #e0dfdb 6px
-  ); /* Punch card stripes */
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+/* Perforation effect between characters */
+#output-tape span {
+  position: relative;
+  display: inline-block;
+  margin-right: 8px; /* Space between characters to simulate perforation */
 }
+
+#output-tape span::after {
+  content: '|'; /* Perforation symbol */
+  position: absolute;
+  right: -3px; /* Place the perforation symbol slightly to the right of each letter */
+  top: 0;
+  font-size: 10px;
+  color: #333; /* Dark color for the perforation symbol */
+  opacity: 0.5; /* Semi-transparent perforation */
+}
+
+
+
 form#chat-form {
 
   background-color: black;}
@@ -156,19 +188,3 @@ color: white;
 font-size: x-large;
 }
 
-function typePunchCardEffect(container, text, speed = 100) {
-  let i = 0;
-  const interval = setInterval(() => {
-    if (i < text.length) {
-      container.textContent += text.charAt(i); // Append the next character
-      i++;
-    } else {
-      clearInterval(interval); // Stop when all characters are displayed
-    }
-  }, speed);
-}
-
-// Example usage
-const outputTape = document.getElementById("output-tape");
-const customResponse = "THERE IS YET INSUFFICIENT DATA TO ANSWER";
-typePunchCardEffect(outputTape, customResponse, 50); // Adjust speed as needed
