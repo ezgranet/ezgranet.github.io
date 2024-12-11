@@ -1,3 +1,51 @@
+const apiKey = ${{OPENAI_API_KEY}};
+
+async function sendMessageToOpenAI(message) {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',  // or 'gpt-4' if you have access
+            messages: [{ role: 'user', content: message }]
+        })
+    });
+
+    const data = await response.json();
+    return data.choices[0].message.content;
+}
+
+document.getElementById('chat-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    const inputMessage = document.getElementById('chat-input').value;
+    
+    if (!inputMessage) return;
+    
+    // Append user message to chat
+    addMessageToChat('User', inputMessage);
+    
+    // Send message to OpenAI and append the response
+    const aiResponse = await sendMessageToOpenAI(inputMessage);
+    addMessageToChat('AI', aiResponse);
+    
+    // Clear the input field
+    document.getElementById('chat-input').value = '';
+});
+
+// Helper function to add messages to the chat display
+function addMessageToChat(sender, message) {
+    const chatBox = document.getElementById('chat-box');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('chat-message');
+    messageElement.classList.add(sender.toLowerCase());
+    messageElement.textContent = `${sender}: ${message}`;
+    chatBox.appendChild(messageElement);
+}
+
+
 // JavaScript for Ask Multivac
 window.onload = () => {
   const outputTape = document.getElementById('output-tape');
