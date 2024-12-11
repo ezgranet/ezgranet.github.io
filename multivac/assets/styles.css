@@ -8,15 +8,6 @@ body {
   height: 100vh;
 }
 
-@font-face {
-    font-family: 'minecart_lcdregular';
-    src: url('minecartlcd-webfont.woff2') format('woff2'),
-         url('minecartlcd-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-opacity: 0.5;
-}
-
 
 
 header {
@@ -118,12 +109,12 @@ body {
   flex-direction: column;
   gap: 20px; /* Space between printers */
   position: relative;
-  font-family: 'minecart_lcdregular' !important;
+  font-family: 'doto' !important;
 }
 
 /* Individual Printer */
 .printer {
-  font-family: 'minecart_lcdregular' !important;
+  font-family: 'doto' !important;
 
   position: relative;
   width: 100%; /* Full width of the screen */
@@ -144,7 +135,7 @@ body {
   top: 50%;
   transform: translateY(-50%) translateX(100%); /* Start off-screen to the right */
   height: 40px; /* Height of the tape */
-  font-family: 'minecart_lcdregular' !important;
+  font-family: 'doto' !important;
   font-size: 20px;
   color: #333; /* Dark text color */
   opacity: 0.65;
@@ -169,14 +160,14 @@ body {
 
 /* Style for individual characters */
 .tape-line span {
-    font-family: 'minecart_lcdregular';
+    font-family: 'doto';
   display: inline-block;
   margin-right: 10px; /* Add spacing between characters */
 }
 
 /* Optional: Perforations between characters */
 .tape-line span::after {
-    font-family: 'minecart_lcdregular';
+    font-family: 'doto';
 
   content: '|'; /* Perforation symbol */
   position: absolute;
